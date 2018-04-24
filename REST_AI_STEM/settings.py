@@ -84,8 +84,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'STEMdb',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
+        'USER': 'stemadmin',
+        'PASSWORD': 'stemadmin',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

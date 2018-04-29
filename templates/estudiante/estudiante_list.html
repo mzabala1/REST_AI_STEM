@@ -1,0 +1,58 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Genero</td>
+			<td>edad</td>
+			<td>Grado</td>
+			<td>gpCiencia</td>
+			<td>gpTecnologia</td>
+			<td>gpIngenieria</td>
+			<td>gpMatematica</td>
+            <td>estrato</td>
+			<td>vcMadre</td>
+			<td>vcPadre</td>
+            <td>numHermanos</td>
+		</tr>
+	</thead>
+	<tbody>
+        {%  if estudiantes %}
+        {% for estudiante in estudiantes %}
+		<tr>
+			<td>{{ estudiante.id }}</td>
+			<td>{{ estudiante.genero }}</td>
+			<td>{{ estudiante.edad }}</td>
+			<td>{{ estudiante.grado }}</td>
+			<td>{{ estudiante.gpCiencia }}</td>
+            <td>{{ estudiante.gpTecnologia }}</td>
+			<td>{{ estudiante.gpIngenieria }}</td>
+			<td>{{ estudiante.gpMatematica }}</td>
+            <td>{{ estudiante.estrato }}</td>
+			<td>{{ estudiante.vcMadre }}</td>
+            <td>{{ estudiante.vcPadre }}</td>
+            <td>{{ estudiante.numHermanos }}</td>
+		</tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No hay registros de mascotas</h1>
+        {% endif %}
+	</tbody>
+</table>
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Next</a>
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}

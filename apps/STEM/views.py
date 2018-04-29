@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
+
 # Create your views here.
 from sklearn import tree
 
 from .forms import EstudianteForm
-
+from .models import Estudiante
 
 def index(request):
-    return render(request, 'estudiante/index.html')
+    return render(request, 'estudiante/index.html',)
 
 def estudiante_view(request):
     form = EstudianteForm(request.POST)
@@ -36,50 +38,24 @@ def estudiante_view(request):
 
         array = predecir([genero, edad, grado, gpCiencia, gpTecnologia, gpIngenieria, gpMatematica, estrato, vcMadre, vcPadre, numHermanos])
         print("Datos a predecir: ", [genero, edad, grado, gpCiencia, gpTecnologia, gpIngenieria, gpMatematica, estrato, vcMadre, vcPadre, numHermanos])
-        print("Prediccion: ", array)
+        print("==================================================================================================================================================================================")
 
+        print("Prediccion: ", array)
         print("Interpretación")
         interpretar(array)
 
         form.save()
+        if request.method == 'POST':
+            return redirect('listar_estudiantes')
 
     return render(request, 'estudiante/estudiante_form.html', {'form': form})
 
-    # 	if request.method == 'POST':
-    # 		form = EstudianteForm(request.POST)
-    #
-    # 		if form.is_valid():
-    #         form.save()
-    #     return redirect('index')
-    # else:
-    #     form = EstudianteForm()
-    #
-    #
-    # return render(request, 'estudiante/estudiante_form.html', {'form': form})
+def estudiante_list(request):
+    estudiante = Estudiante.objects.all()
 
-# def prediccion_view(request):
-# 	form_estudiante = EstudianteForm(request.POST)
-# 	if form_estudiante.is_valid():
-# 		datos = form_estudiante.cleaned_data
-# 		genero = datos.get("genero")
-# 		edad = datos.get("edad")
-# 		grado = datos.get("grado")
-# 		gpCiencia = datos.get("gpCiencia")
-# 		gpTecnologia = datos.get("gpTecnologia")
-# 		gpIngenieria = datos.get("gpIngenieria")
-# 		gpMatematica = datos.get("gpMatematica")
-# 		estrato = datos.get("estrato")
-# 		vcMadre = datos.get("vcMadre")
-# 		vcPadre = datos.get("vcPadre")
-# 		numHermanos = datos.get("numHermanos")
-#
-# 		print genero
-# 		print edad
-# 		print vcPadre
-# 		print gpMatematica
+    contexto = {'estudiantes':estudiante}
 
-
-# 	return render(request, 'estudiante/estudiante.html', {'form': form})
+    return render(request, 'estudiante/estudiante_list.html', contexto)
 
 x=[[1,2,9,1,2,3,2,2,1,0,1],[0,2,9,4,3,2,1,4,1,0,5],[1,3,9,2,4,2,1,2,1,0,2],
     [0,2,9,1,1,1,1,2,1,0,0],[0,3,9,3,1,2,4,3,1,1,0],[1,2,9,3,4,3,3,2,0,0,5],[1,2,9,4,3,1,2,2,0,1,1],

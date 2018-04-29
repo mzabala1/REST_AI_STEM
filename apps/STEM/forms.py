@@ -34,9 +34,9 @@ class EstudianteForm(forms.ModelForm):
             'estrato': 'Estrato',
             'vcMadre': 'Vive con la madre',
             'vcPadre': 'Vive con el padre',
-            'numHermanos': 'Numero de herman@s',
+            'numHermanos': 'Número de herman@s',
         }
-        #
+
         # widgets = {
         #     'genero': forms.CheckboxSelectMultiple(),
         #     'edad': forms.NumberInput(attrs={'class': 'form-control'}),
@@ -50,7 +50,8 @@ class EstudianteForm(forms.ModelForm):
         #     'vcPadre': forms.CheckboxSelectMultiple(),
         #     'numHermanos': forms.CheckboxSelectMultiple(),
         # }
-    #
+
+    #para posterior uso en caso de querer modificar widgets
     # genero = models.BooleanField()
     # edad = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(1)])
     # grado = models.IntegerField(validators=[MaxValueValidator(11),MinValueValidator(6)])
@@ -62,4 +63,3 @@ class EstudianteForm(forms.ModelForm):
     # vcMadre = models.BooleanField()
     # vcPadre = models.BooleanField()
     # numHermanos = models.IntegerField(validators=[MaxValueValidator(5),MinValueValidator(0)])
-    #

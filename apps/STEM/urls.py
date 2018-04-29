@@ -1,6 +1,8 @@
-from django.contrib import admin
 from django.urls import path
-from apps.STEM import views
+from .views import index, estudiante_view, estudiante_list
+
 urlpatterns = [
-    path('index/', views.index, name="index"),
+    path(r'', index, name="index"),
+    path(r'registro', estudiante_view, name="registro_estudiante"),
+    path(r'listar', estudiante_list, name="listar_estudiantes"),
 ]

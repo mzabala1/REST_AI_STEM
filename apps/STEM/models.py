@@ -1,10 +1,9 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
-# from apps.profesores.models import Profesor
 
 class Estudiante(models.Model):
-    genero = models.BooleanField()
+    genero = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
     edad = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(1)])
     grado = models.IntegerField(validators=[MaxValueValidator(11),MinValueValidator(6)])
     gpCiencia = models.IntegerField(validators=[MaxValueValidator(4),MinValueValidator(1)])
@@ -12,8 +11,8 @@ class Estudiante(models.Model):
     gpIngenieria = models.IntegerField(validators=[MaxValueValidator(4),MinValueValidator(1)])
     gpMatematica = models.IntegerField(validators=[MaxValueValidator(4),MinValueValidator(1)])
     estrato = models.IntegerField(validators=[MaxValueValidator(6),MinValueValidator(0)])
-    vcMadre = models.BooleanField()
-    vcPadre = models.BooleanField()
+    vcMadre = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    vcPadre = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
     numHermanos = models.IntegerField(validators=[MaxValueValidator(5),MinValueValidator(0)])
 
 

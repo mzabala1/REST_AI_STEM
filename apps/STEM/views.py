@@ -1,16 +1,22 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
 # Create your views here.
-import numpy  #permite usar arrays
-from sklearn import tree  #permite usar arboles de desicion
-from sklearn.tree import export_graphviz #esta libreria nos ofrece la opcion de graficar el arbol
-import graphviz
-import matplotlib.pyplot as plt
-import numpy as np  #nos ofrece la opcion de crear vectores y matrices
-import sys
+from sklearn import tree
+
+from .forms import EstudianteForm
 
 def index(request):
-    return HttpResponse("Hello World")
+    return render(request, 'estudiante/index.html')
+
+def estudiante_view(request):
+    if request.method == 'POST':
+        form = EstudianteForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('index')
+    else:
+        form = EstudianteForm()
+    return render(request, 'estudiante/estudiante_form.html', {'form': form})
+
 
 x=[[1,2,9,1,2,3,2,2,1,0,1],[0,2,9,4,3,2,1,4,1,0,5],[1,3,9,2,4,2,1,2,1,0,2],
 	[0,2,9,1,1,1,1,2,1,0,0],[0,3,9,3,1,2,4,3,1,1,0],[1,2,9,3,4,3,3,2,0,0,5],[1,2,9,4,3,1,2,2,0,1,1],

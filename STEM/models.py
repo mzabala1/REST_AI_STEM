@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-# Create your models here.
 
 class Estudiante(models.Model):
     genero = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
@@ -16,7 +15,9 @@ class Estudiante(models.Model):
     numHermanos = models.IntegerField(validators=[MaxValueValidator(5),MinValueValidator(0)])
 
 
-
+    @classmethod
+    def get_by_id(cls, uid):
+        return Estudiante.objects.get(pk=uid)
 
 #     usuario char 10
 #     password char 10

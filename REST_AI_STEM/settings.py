@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+PROJECT_APPS = ['STEM']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,7 +45,25 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'STEM',
+    'django_jenkins',
 ]
+
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pylint',
+    'django_jenkins.tasks.run_pyflakes',
+)
+
+
+#Now running python manage.py jenkins will do the same job as python manage.py tests
+#but also will create reports folder in the root of your django project with jenkins parsable pylint,
+#test coverage and tests reports.
+
+#https://sites.google.com/site/kmmbvnr/home/django-jenkins-tutorial
+
+#https://pypi.org/project/pep8/
+#https://www.logilab.org/project/pylint
+#https://pypi.org/project/pyflakes/
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

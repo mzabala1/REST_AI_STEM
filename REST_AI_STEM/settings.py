@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'STEM',
     'django_jenkins',
+    'rest_framework',
 ]
 
 JENKINS_TASKS = (

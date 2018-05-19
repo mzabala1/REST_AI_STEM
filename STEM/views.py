@@ -8,7 +8,7 @@ from rest_framework.response import Response
 
 class EstudianteList(APIView):
 
-    def get(self):
+    def get(self, request):
         Estudiante1 = Estudiante.objects.all()
         serializer = EstudianteSerializer(Estudiante1, many=True)
         return Response(serializer.data)

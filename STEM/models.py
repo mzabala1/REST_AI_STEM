@@ -19,9 +19,6 @@ class Estudiante(models.Model):
     def get_by_id(cls, uid):
         return Estudiante.objects.get(pk=uid)
 
-#     usuario char 10
-#     password char 10
-
 #     genero 0=hombre 1=mujer
 #     edad = 1=5-10años 2=10-15 3=15-20
 #     grado = 6,7,8,9,10,11
@@ -36,8 +33,9 @@ class Estudiante(models.Model):
 #
 #     preguntas acertadas un1 mod ciencia =  0 a 3
 #     preguntas perdidas un1 mod ciencia = 0 a 3
-#     paso un1 mod ciencia = 0 = no pasa 1= password_validation
+#     paso un1 mod ciencia = 0, no paso=1
 #
+#     un1 mod ciencia
 #     un2 mod ciencia
 #     un3 mod ciencia
 #     un4 mod ciencia
@@ -54,4 +52,4 @@ class Estudiante(models.Model):
 #     un3 mod matematicas
 #     un4 mod matematicas
 
-# https://docs.google.com/document/d/1rYzZNIRgBlw-0ianox3LxofiBUtU48KA6bxYbSynGDw/edit
+#     https://docs.google.com/document/d/1rYzZNIRgBlw-0ianox3LxofiBUtU48KA6bxYbSynGDw/edit

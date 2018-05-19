@@ -1,9 +1,20 @@
 from django.shortcuts import render, redirect
-
 from sklearn import tree
-
 from .forms import EstudianteForm
 from .models import Estudiante
+from .serializers import EstudianteSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+class EstudianteList(APIView):
+
+    def get(self):
+        Estudiante1 = Estudiante.objects.all()
+        serializer = EstudianteSerializer(Estudiante1, many=True)
+        return Response(serializer.data)
+
+    def post(self):
+        pass
 
 def index(request):
     return render(request, 'estudiante/index.html',)

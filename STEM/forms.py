@@ -1,6 +1,5 @@
 from django import forms
 from .models import Estudiante
-from django.core.validators import MaxValueValidator, MinValueValidator
 
 BOOL_CHOICES = ('0', '1')
 

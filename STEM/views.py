@@ -59,6 +59,12 @@ def estudiante_view(request):
         print("Prediccion: ", array)
         print("Interpretación")
         interpretar(array)
+
+        f = open('STEM/prediccion.csv', 'w')
+        array_str = ','.join(str(x) for x in array)
+        f.write(array_str)
+        f.close()
+
         print("========================================================================"
               "========================================================================"
               "==================================")

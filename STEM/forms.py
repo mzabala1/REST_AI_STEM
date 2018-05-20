@@ -1,8 +1,6 @@
 from django import forms
 from .models import Estudiante
 
-BOOL_CHOICES = ('0', '1')
-
 class EstudianteForm(forms.ModelForm):
 
     class Meta:

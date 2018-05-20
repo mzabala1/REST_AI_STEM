@@ -26,7 +26,7 @@ class EstudiantesAPITestCase(APITestCase):
     def test_get_item(self):
         data = {}
         url = api_reverse("app-stem:estudiante-list")
-        response = self.client.get(url, data, formar='json')
+        response = self.client.get(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 class test_estudiante(TestCase):

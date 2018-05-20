@@ -21,17 +21,18 @@
 		            	<nav class="navbar navbar-default">
 		                	<div class="container-fluid">
 		                  		<div class="navbar-header">
-		                    		<a class="navbar-brand" href="{% url 'index' %}">Home</a>
+		                    		<a class="navbar-brand" href="{% url 'app-stem:index' %}">Home</a>
 		                  		</div>
 		                  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		                    	<ul class="nav navbar-nav">
 		                      		<li class="dropdown">
 		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Estudiante <span class="caret"></span></a>
 				                        <ul class="dropdown-menu" role="menu">
-				                        	<li><a href="{% url 'registro_estudiante' %}">Registrar</a></li>
-                                            <li><a href="{% url 'listar_estudiantes' %}">Listar</a></li>
+				                        	<li><a href="{% url 'app-stem:registro_estudiante' %}">Registrar</a></li>
+                                            <li><a href="{% url 'app-stem:listar_estudiantes' %}">Listar</a></li>
 				                        </ul>
 		                      		</li>
+                                    <li><a href="{% url 'app-stem:estudiante-list' %}">API</a></li>
 		                    	</ul>
 		                    	<ul class="nav navbar-nav navbar-right">
 		                        	<li class="dropdown"><a href="http://www.eafit.edu.co/" onclick="pageTracker._link(this.href); return false;">Universidad EAFIT</a>

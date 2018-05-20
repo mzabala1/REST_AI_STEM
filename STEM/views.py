@@ -70,25 +70,6 @@ def estudiante_view(request):
               "==================================")
         form.save()
 
-        # contexto={
-        #     'data': datos,
-        #     'entrenar': entrenar(x, y),
-        #     'probar': probar(xp, yp),
-        #     'genero': genero,
-        #     'edad': edad,
-        #     'grado': grado,
-        #     'gpCiencia': gpCiencia,
-        #     'gpTecnologia': gpTecnologia,
-        #     'gpIngenieria': gpIngenieria,
-        #     'gpMatematica': gpMatematica,
-        #     'estrato': estrato,
-        #     'vcMadre': vcMadre,
-        #     'vcPadre': vcPadre,
-        #     'numHermanos': numHermanos,
-        #     'array':predecir([genero, edad, grado, gpCiencia, gpTecnologia, gpIngenieria, gpMatematica, estrato, vcMadre, vcPadre, numHermanos]),
-        #     'interpretar': interpretar(array),
-        # }
-
         if request.method == 'POST':
              return redirect('listar_estudiantes')
 

@@ -23,6 +23,60 @@ class Estudiante(models.Model):
     def get_api_url(self, request=None):
         return api_reverse("app-stem:estudiante-rud", kwargs={'pk': self.pk}, request=request)
 
+class Predecidos(models.Model):
+    PAU1C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU1C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU1C = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU2C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU2C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU2C = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU3C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU3C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU3C = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU4C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU4C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU4C = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+
+    PAU1T = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU1T = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU1T = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU2T = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU2T = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU2T = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU3T = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU3T = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU3T = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU4T = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU4T = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU4T = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+
+    PAU1I = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU1I = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU1I = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU2I = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU2I = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU2I = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU3I = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU3I = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU3I = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU4I = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU4I = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU4I = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+
+    PAU1M = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU1M = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU1M = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU2M = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU2M = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU2M = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU3M = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU3M = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU3M = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+    PAU4M = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PFU4M = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
+    PASOU4M = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
+
+#   estudiante = models.OneToOneField(Estudiante, null=False, blank=True, on_delete=models.CASCADE)
 #     genero 0=hombre 1=mujer
 #     edad = 1=5-10años 2=10-15 3=15-20
 #     grado = 6,7,8,9,10,11
@@ -34,26 +88,9 @@ class Estudiante(models.Model):
 #     vive con madre = 0=no 1=si
 #     vive con papa = 0=no 1=si
 #     cantidad de hermanos = 0 a 5
-#
-#     preguntas acertadas un1 mod ciencia =  0 a 3
-#     preguntas perdidas un1 mod ciencia = 0 a 3
-#     paso un1 mod ciencia = 0, no paso=1
-#
-#     un1 mod ciencia
-#     un2 mod ciencia
-#     un3 mod ciencia
-#     un4 mod ciencia
-#     un1 mod tecnologia
-#     un2 mod tecnologia
-#     un3 mod tecnologia
-#     un4 mod tecnologia
-#     un1 mod ing
-#     un2 mod ing
-#     un3 mod ing
-#     un4 mod ing
-#     un1 mod matematicas
-#     un2 mod matematicas
-#     un3 mod matematicas
-#     un4 mod matematicas
+
+#     preguntas acertadas unidad X de tema Y
+#     preguntas fallidas unidad X de tema Y
+#     paso unidad X de tema Y
 
 #     https://docs.google.com/document/d/1rYzZNIRgBlw-0ianox3LxofiBUtU48KA6bxYbSynGDw/edit

@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>temporal mientras corregimos error</title>
-</head>
-<body>
-    <form method="post">
+{% extends 'base/base.html' %}
+
+{% block tittle %}
+    Registro
+{% endblock %}
+
+{% block content %}
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Registrar</button>
 </form>
-</body>
-</html>
+{% endblock %}

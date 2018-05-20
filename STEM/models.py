@@ -23,6 +23,7 @@ class Estudiante(models.Model):
     def get_api_url(self, request=None):
         return api_reverse("app-stem:estudiante-rud", kwargs={'pk': self.pk}, request=request)
 
+
 class Predecidos(models.Model):
     PAU1C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
     PFU1C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])

@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
-from STEM import views
+
+app_name = "REST_AI_STEM"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('STEM.urls')),
-    path('estudiantes/', views.EstudianteList.as_view()),
+    path('', include('STEM.urls', namespace="app-stem")),
 ]

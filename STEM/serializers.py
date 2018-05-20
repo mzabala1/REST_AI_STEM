@@ -5,8 +5,8 @@ class EstudianteSerializer(ModelSerializer):
 
     class Meta:
         model = Estudiante
-        fields='__all__'
-
+        fields = '__all__'
+        read_only_fields = ['id']
 
     # pk = serializers.IntegerField(read_only=True)
     # genero = serializers.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])

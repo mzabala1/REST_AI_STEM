@@ -1,5 +1,7 @@
 from django.db import models
+from django.urls import reverse
 from django.core.validators import MaxValueValidator, MinValueValidator
+from rest_framework.reverse import reverse as api_reverse
 
 class Estudiante(models.Model):
     genero = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
@@ -18,6 +20,9 @@ class Estudiante(models.Model):
     @classmethod
     def get_by_id(cls, uid):
         return Estudiante.objects.get(pk=uid)
+
+    def get_api_url(self, request=None):
+        return api_reverse("app-stem:estudiante-rud", kwargs={'pk': self.pk}, request=request)
 
 #     genero 0=hombre 1=mujer
 #     edad = 1=5-10años 2=10-15 3=15-20

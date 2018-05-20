@@ -1,5 +1,33 @@
 from django.test import TestCase
 from .models import Estudiante
+from rest_framework.test import APITestCase
+from django.contrib.auth import get_user_model
+from rest_framework.reverse import reverse as api_reverse
+from rest_framework import status
+
+User = get_user_model()
+
+class EstudiantesAPITestCase(APITestCase):
+    def setUp(self):
+        user = User(username='testcfeuser', email='test@test.com')
+        user.set_password("somerandompassword")
+        user.save()
+        estudiante1 = Estudiante.objects.create(genero="1", edad="2", grado="8", gpCiencia="2", gpTecnologia="2",
+                                          gpIngenieria="3", gpMatematica="4", estrato="1", vcMadre="0", vcPadre="0",
+                                          numHermanos="3")
+    def test_single_user(self):
+        user_count = User.objects.count()
+        self.assertEqual(user_count, 1)
+
+    def test_single_post(self):
+        post_count = User.objects.count()
+        self.assertEqual(post_count, 1)
+
+    def test_get_item(self):
+        data = {}
+        url = api_reverse("app-stem:estudiante-list")
+        response = self.client.get(url, data, formar='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 class test_estudiante(TestCase):
 
@@ -33,7 +61,7 @@ class test_estudiante(TestCase):
         self.assertEquals(self.test_estudiante2.numHermanos, "0")
 
     def test_get_by_id(self):
-        self.assertEquals(Estudiante.get_by_id(1), self.test_estudiante1)
+        self.assertEquals(Estudiante.get_by_id(4), self.test_estudiante1)
 
     def tearDown(self):
         self.test_estudiante1.delete()

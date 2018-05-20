@@ -3,18 +3,21 @@ from sklearn import tree
 from .forms import EstudianteForm
 from .models import Estudiante
 from .serializers import EstudianteSerializer
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework import generics
 
-class EstudianteList(APIView):
+class estudianteRudView(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field = 'pk' #id
+    serializer_class = EstudianteSerializer
 
-    def get(self, request):
-        Estudiante1 = Estudiante.objects.all()
-        serializer = EstudianteSerializer(Estudiante1, many=True)
-        return Response(serializer.data)
+    def get_queryset(self):
+        return Estudiante.objects.all()
 
-    def post(self):
-        pass
+class estudianteFullList(generics.ListAPIView):
+    lookup_field = 'pk' #id
+    serializer_class = EstudianteSerializer
+
+    def get_queryset(self):
+        return Estudiante.objects.all()
 
 def index(request):
     return render(request, 'estudiante/index.html',)

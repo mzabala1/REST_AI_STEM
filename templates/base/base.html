@@ -5,64 +5,52 @@
 <head>
     {%  block extrahead %}
     {% endblock %}
-
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <meta charset="UTF-8">
     <title>{% block tittle %} Document {% endblock %}</title>
 </head>
 <body>
 <div class="container">
-
-	{% block navbar %}
-		<div class="bs-docs-section clearfix">
-		    <div class="row">
-		        <div class="col-lg-12">
-		            <div class="bs-component">
-		            	<nav class="navbar navbar-default">
-		                	<div class="container-fluid">
-		                  		<div class="navbar-header">
-		                    		<a class="navbar-brand" href="{% url 'index' %}">Home</a>
-		                  		</div>
-		                  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		                    	<ul class="nav navbar-nav">
-		                      		<li class="dropdown">
-		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Estudiante <span class="caret"></span></a>
-				                        <ul class="dropdown-menu" role="menu">
-				                        	<li><a href="{% url 'registro_estudiante' %}">Registrar</a></li>
-                                            <li><a href="{% url 'listar_estudiantes' %}">Listar</a></li>
-				                        </ul>
-		                      		</li>
-		                    	</ul>
-		                    	<ul class="nav navbar-nav navbar-right">
-		                        	<li class="dropdown"><a href="http://www.eafit.edu.co/" onclick="pageTracker._link(this.href); return false;">Universidad EAFIT</a>
-		                        	</li>
-		                    	</ul>
-		                    </div>
-		                </div>
-		            </nav>
-		        </div>
-           	</div>
+    {% block navbar %}
+        <div class="bs-docs-section clearfix">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bs-component">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <a class="navbar-brand" href="{% url 'app-stem:index' %}">Home</a>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="{% url 'app-stem:registro_estudiante' %}">Registrar</a></li>
+                                        <li><a href="{% url 'app-stem:listar_estudiantes' %}">Listar estudiantes</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="{% url 'app-stem:estudiante-list' %}">API Estudiantes</a></li>
+                                        <li><a href="{% url 'app-stem:predecidos-list' %}">API Predecidos</a></li>
+                                        <li class="dropdown"><a href="http://www.eafit.edu.co/" onclick="pageTracker._link(this.href); return false;">Universidad EAFIT</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    {% endblock %}
 
-	{% endblock %}
-
-
-	{% block content %}
-	<h4>	Bienvenido a la aplicación STEM Skills		</h4>
-	{% endblock %}
-
-
-	{% block footer %}
-	{% endblock%}
+    {% block content %}
+        <body id="bg" style="background-image: url('{% static "/Logo.png"%}'); background-repeat: no-repeat; background-position: center; padding-bottom: 500px;"></body>
+    {% endblock %}
+    {% block footer %}
+    {% endblock%}
 </div>
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-            crossorigin="anonymous"></script>
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-	{% block extrajs %}
-	{% endblock %}
+{% block extrajs %}
+{% endblock %}
 
 </body>
 </html>

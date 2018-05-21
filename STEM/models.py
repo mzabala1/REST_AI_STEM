@@ -77,7 +77,9 @@ class Predecidos(models.Model):
     PFU4M = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
     PASOU4M = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
 
-#   estudiante = models.OneToOneField(Estudiante, null=False, blank=True, on_delete=models.CASCADE)
+    def get_api_url(self, request=None):
+        return api_reverse("app-stem:predecidos-rud", kwargs={'pk': self.pk}, request=request)
+
 #     genero 0=hombre 1=mujer
 #     edad = 1=5-10años 2=10-15 3=15-20
 #     grado = 6,7,8,9,10,11

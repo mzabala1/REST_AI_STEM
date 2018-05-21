@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from sklearn import tree
 from .forms import EstudianteForm
 from .models import Estudiante, Predecidos
-from .serializers import EstudianteSerializer
+from .serializers import EstudianteSerializer, PredecidosSerializer
 from rest_framework import generics
 from pylab import *
 
@@ -19,6 +19,20 @@ class estudianteFullList(generics.ListAPIView):
 
     def get_queryset(self):
         return Estudiante.objects.all()
+
+class predecidosRudView(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field = 'pk' #id
+    serializer_class = PredecidosSerializer
+
+    def get_queryset(self):
+        return Predecidos.objects.all()
+
+class predecidosFullList(generics.ListAPIView):
+    lookup_field = 'pk' #id
+    serializer_class = PredecidosSerializer
+
+    def get_queryset(self):
+        return Predecidos.objects.all()
 
 def index(request):
     return render(request, 'estudiante/index.html',)
@@ -40,23 +54,17 @@ def estudiante_view(request):
         vcPadre = datos.get("vcPadre")
         numHermanos = datos.get("numHermanos")
 
-        print("========================================================================"
-              "========================================================================"
-              "==================================")
+        print("=========================================")
         print("Datos ingresados por el estudiante:")
         print(datos)
-        print("========================================================================"
-              "========================================================================"
-              "==================================")
+        print("=========================================")
         print("Resultados predecidos:")
         entrenar(x, y)
         print("El modelo ha sido entrenado")
         print("Presicion: ", probar(xp, yp))
         print("Datos a predecir: ", [genero, edad, grado, gpCiencia, gpTecnologia, gpIngenieria, gpMatematica, estrato, vcMadre, vcPadre, numHermanos])
         array = predecir([genero, edad, grado, gpCiencia, gpTecnologia, gpIngenieria, gpMatematica, estrato, vcMadre, vcPadre, numHermanos])
-        print("========================================================================"
-              "========================================================================"
-              "==================================")
+        print("=========================================")
         print("Prediccion: ", array)
         print("Interpretación")
         interpretar(array)
@@ -65,19 +73,12 @@ def estudiante_view(request):
         array1 = np.ravel(array, order='F')
         array2 = "".join(str(e) for e in array1)
         array3 = array2.replace(".0", ",")
-        print("###########")
-        print(array1)
-        print("###########")
-        print(array2)
-        print("###########")
+        print("=========================================")
+        print("Archivo csv:")
         print(array3)
-        print("###########")
         f.write(array3)
         f.close()
-
-        print("========================================================================"
-              "========================================================================"
-              "==================================")
+        print("=========================================")
         form.save()
 
         if request.method == 'POST':

@@ -4,6 +4,7 @@ from .forms import EstudianteForm
 from .models import Estudiante, Predecidos
 from .serializers import EstudianteSerializer
 from rest_framework import generics
+from pylab import *
 
 class estudianteRudView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'pk' #id
@@ -59,11 +60,20 @@ def estudiante_view(request):
         print("Prediccion: ", array)
         print("Interpretación")
         interpretar(array)
-        #
-        # f = open('STEM/prediccion.csv', 'w')
-        # array_str = '.'.join(str(x) for x in array)
-        # f.write(array_str)
-        # f.close()
+
+        f = open('STEM/prediccion.csv', 'w')
+        array1 = np.ravel(array, order='F')
+        array2 = "".join(str(e) for e in array1)
+        array3 = array2.replace(".0", ",")
+        print("###########")
+        print(array1)
+        print("###########")
+        print(array2)
+        print("###########")
+        print(array3)
+        print("###########")
+        f.write(array3)
+        f.close()
 
         print("========================================================================"
               "========================================================================"
@@ -74,7 +84,7 @@ def estudiante_view(request):
 
             f = open('STEM/prediccion.csv', 'r')
             for line in f:
-                line = line.split('. ')
+                line = line.split(',')
                 pred = Predecidos()
                 pred.PAU1C = line[0]
                 pred.PFU1C = line[1]
@@ -265,18 +275,18 @@ yp=[[2,1,1,2,1,1,2,1,1,3,0,1,3,0,1,3,0,1,3,0,1,3,0,1,3,0,1,1,2,0,3,0,1,2,1,1,3,0
     [2,1,1,2,1,1,1,2,0,3,0,1,3,0,1,3,0,1,3,0,1,3,0,1,3,0,1,2,1,1,2,1,1,1,2,0,3,0,1,1,2,1,2,1,1,1,2,0],
     [3,0,1,3,0,1,2,1,1,3,0,1,3,0,1,3,0,1,3,0,1,3,0,1,2,1,1,2,1,1,3,0,1,3,0,1,3,0,1,3,0,0,3,0,1,1,2,0]]
 
-clasif = tree.DecisionTreeClassifier() #crea un variable con todos los atributos y metodos del arbol clasificador
+clasif = tree.DecisionTreeClassifier()  # crea un variable con todos los atributos y metodos del arbol clasificador
 z = ['U1C', 'U2C', 'U3C', 'U4C', 'U1T', 'U2T','U3T', 'U4T', 'U1I', 'U2I', 'U3I', 'U4I', 'U1M', 'U2M', 'U3M', 'U4M']
 
 def entrenar(entrada,salida):
     global clasif
-    clasif = clasif.fit(entrada,salida) # entrena el modelos con 2 matrices dadas (de 11 y 49 datos)
+    clasif = clasif.fit(entrada,salida)  # entrena el modelos con 2 matrices dadas (de 11 y 49 datos)
 
 def predecir(datoPredecir):
     global clasif
-    return clasif.predict([datoPredecir]) #predice desempeno en base a un dato entrada
+    return clasif.predict([datoPredecir])  # predice desempeno en base a un dato entrada
 
-def interpretar(x):	#interpreta la prediccion obtenida, la resive como parametro
+def interpretar(x):	 # interpreta la prediccion obtenida, la resive como parametro
     i = 2
     y = []
     while i < len(x[0]):
@@ -287,12 +297,12 @@ def interpretar(x):	#interpreta la prediccion obtenida, la resive como parametro
         i = i+3
     i = 0
     while i < len(z):
-        print (y[i], z[i])
+        print(y[i], z[i])
         i = i+1
 
 def probar(entrada,salida): #dadas 2 matrices (20% de los datos) prueba que tan preciso es el modelo
     i = 0
-    cantDatosIguales=0
+    cantDatosIguales = 0
     for dato in entrada:
         array = predecir(dato)
         cantDatosIguales = cantDatosIguales + probarIgualdad(array[0], salida[i])

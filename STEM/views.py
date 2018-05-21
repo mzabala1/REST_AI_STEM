@@ -37,6 +37,9 @@ class predecidosFullList(generics.ListAPIView):
 def index(request):
     return render(request, 'estudiante/index.html',)
 
+def registro_preguntas(request):
+    return render(request, 'estudiante/registro_pregunta.html',)
+
 def estudiante_view(request):
 
     form = EstudianteForm(request.POST)

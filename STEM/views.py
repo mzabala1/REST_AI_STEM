@@ -6,7 +6,7 @@ from .serializers import EstudianteSerializer, PredecidosSerializer
 from rest_framework import generics
 from pylab import *
 
-class estudianteRudView(generics.RetrieveUpdateDestroyAPIView):
+class estudianteRudView(generics.RetrieveAPIView):
     lookup_field = 'pk' #id
     serializer_class = EstudianteSerializer
 
@@ -20,7 +20,7 @@ class estudianteFullList(generics.ListAPIView):
     def get_queryset(self):
         return Estudiante.objects.all()
 
-class predecidosRudView(generics.RetrieveUpdateDestroyAPIView):
+class predecidosRudView(generics.RetrieveAPIView):
     lookup_field = 'pk' #id
     serializer_class = PredecidosSerializer
 
@@ -39,6 +39,9 @@ def index(request):
 
 def registro_preguntas(request):
     return render(request, 'estudiante/registro_pregunta.html',)
+
+def descargar_apk(request):
+    return render(request, 'estudiante/apk_descarga.html',)
 
 def estudiante_view(request):
 

@@ -80,6 +80,7 @@ class Predecidos(models.Model):
     def get_api_url(self, request=None):
         return api_reverse("app-stem:predecidos-rud", kwargs={'pk': self.pk}, request=request)
 
+
 #     genero 0=hombre 1=mujer
 #     edad = 1=5-10años 2=10-15 3=15-20
 #     grado = 6,7,8,9,10,11

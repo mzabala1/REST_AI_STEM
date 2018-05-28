@@ -47,7 +47,6 @@ def estudiante_view(request):
 
     form = EstudianteForm(request.POST)
     if form.is_valid():
-        dato
         datos = form.cleaned_data
         genero = datos.get("genero")
         edad = datos.get("edad")

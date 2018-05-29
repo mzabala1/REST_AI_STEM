@@ -82,6 +82,15 @@ class Predecidos(models.Model):
     def get_api_url(self, request=None):
         return api_reverse("app-stem:predecidos-rud", kwargs={'pk': self.pk}, request=request)
 
+class Preguntas(models.Model):
+    pregunta = models.CharField(max_length=500)
+    nivel = models.IntegerField(validators=[MaxValueValidator(4), MinValueValidator(1)])
+    area = models.IntegerField(validators=[MaxValueValidator(4), MinValueValidator(1)])
+    unidad = models.IntegerField(validators=[MaxValueValidator(4), MinValueValidator(1)])
+
+#     nivel 1 facil, 2 medio, 3 dificil, 4 muy dificil
+#     area 1 ciencia, 2 tecnologia, 3 ingenieria, 4 matematica
+#     unidad = numero, 1 o 2 o 3 o4
 
 #     genero 0=hombre 1=mujer
 #     edad = 1=5-10años 2=10-15 3=15-20

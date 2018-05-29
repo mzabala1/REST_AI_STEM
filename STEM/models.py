@@ -84,6 +84,10 @@ class Predecidos(models.Model):
 
 class Preguntas(models.Model):
     pregunta = models.CharField(max_length=500)
+    respuestac = models.CharField(max_length=500)
+    respuestaf1 = models.CharField(max_length=500)
+    respuestaf2 = models.CharField(max_length=500)
+    respuestaf3 = models.CharField(max_length=500)
     nivel = models.IntegerField(validators=[MaxValueValidator(4), MinValueValidator(1)])
     area = models.IntegerField(validators=[MaxValueValidator(4), MinValueValidator(1)])
     unidad = models.IntegerField(validators=[MaxValueValidator(4), MinValueValidator(1)])

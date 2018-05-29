@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from sklearn import tree
-from .forms import EstudianteForm
-from .models import Estudiante, Predecidos
-from .serializers import EstudianteSerializer, PredecidosSerializer
+from .forms import EstudianteForm, PreguntasForm
+from .models import Estudiante, Predecidos, Preguntas
+from .serializers import EstudianteSerializer, PredecidosSerializer, PreguntasSerializer
 from rest_framework import generics
 from pylab import *
 
@@ -34,11 +34,22 @@ class predecidosFullList(generics.ListAPIView):
     def get_queryset(self):
         return Predecidos.objects.all()
 
+class preguntasRudView(generics.RetrieveAPIView):
+    lookup_field = 'pk' #id
+    serializer_class = PreguntasSerializer
+
+    def get_queryset(self):
+        return Preguntas.objects.all()
+
+class preguntasFullList(generics.ListAPIView):
+    lookup_field = 'pk' #id
+    serializer_class = PreguntasSerializer
+
+    def get_queryset(self):
+        return Preguntas.objects.all()
+
 def index(request):
     return render(request, 'estudiante/index.html',)
-
-def registro_preguntas(request):
-    return render(request, 'estudiante/registro_pregunta.html',)
 
 def descargar_apk(request):
     return render(request, 'estudiante/apk_descarga.html',)
@@ -153,6 +164,15 @@ def estudiante_view(request):
             return redirect('app-stem:listar_estudiantes')
 
     return render(request, 'estudiante/estudiante_form.html', {'form': form})
+
+def pregunta_view(request):
+    form = PreguntasForm(request.POST)
+    if form.is_valid():
+        if request.method == 'POST':
+            form.save()
+        return redirect('app-stem:index')
+
+    return render(request, 'estudiante/registro_pregunta_temp.html', {'form': form})
 
 def estudiante_list(request):
     estudiante = Estudiante.objects.all()

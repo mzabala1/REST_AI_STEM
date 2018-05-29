@@ -1,8 +1,7 @@
 from django import forms
-from .models import Estudiante
+from .models import Estudiante, Preguntas
 
 class EstudianteForm(forms.ModelForm):
-
     class Meta:
         model = Estudiante
 
@@ -36,16 +35,34 @@ class EstudianteForm(forms.ModelForm):
             'numHermanos': 'Número de herman@s',
         }
 
-        # widgets = {
-        #     'genero': forms.CheckboxSelectMultiple(),
-        #     'edad': forms.NumberInput(attrs={'class': 'form-control'}),
-        #     'grado':forms.NumberInput(attrs={'class': 'form-control'}),
-        #     'gpCiencia': forms.CheckboxSelectMultiple(),
-        #     'gpTecnologia': forms.CheckboxSelectMultiple(),
-        #     'gpIngenieria': forms.CheckboxSelectMultiple(),
-        #     'gpMatematica': forms.CheckboxSelectMultiple(),
-        #     'estrato': forms.CheckboxSelectMultiple(),
-        #     'vcMadre': forms.CheckboxSelectMultiple(),
-        #     'vcPadre': forms.CheckboxSelectMultiple(),
-        #     'numHermanos': forms.CheckboxSelectMultiple(),
-        # }
+class PreguntasForm(forms.ModelForm):
+    class Meta:
+        model = Preguntas
+
+        fields = [
+            'pregunta',
+            'nivel',
+            'area',
+            'unidad',
+        ]
+
+        labels = {
+            'pregunta': 'Ingrese pregunta',
+            'nivel': 'Seleccione nivel de la pregunta',
+            'area': 'Seleccione area',
+            'unidad': 'Seleccione unidad',
+        }
+
+# widgets = {
+#     'genero': forms.CheckboxSelectMultiple(),
+#     'edad': forms.NumberInput(attrs={'class': 'form-control'}),
+#     'grado':forms.NumberInput(attrs={'class': 'form-control'}),
+#     'gpCiencia': forms.CheckboxSelectMultiple(),
+#     'gpTecnologia': forms.CheckboxSelectMultiple(),
+#     'gpIngenieria': forms.CheckboxSelectMultiple(),
+#     'gpMatematica': forms.CheckboxSelectMultiple(),
+#     'estrato': forms.CheckboxSelectMultiple(),
+#     'vcMadre': forms.CheckboxSelectMultiple(),
+#     'vcPadre': forms.CheckboxSelectMultiple(),
+#     'numHermanos': forms.CheckboxSelectMultiple(),
+# }

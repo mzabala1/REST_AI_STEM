@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6739909e-26d4-4d63-b04c-cca4dcdbcedb" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/STEM/migrations/0009_preguntas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/estudiante/registro_pregunta_temp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/STEM/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/STEM/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/STEM/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/STEM/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/STEM/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/STEM/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/STEM/prediccion.csv" beforeDir="false" afterPath="$PROJECT_DIR$/STEM/prediccion.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/STEM/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/STEM/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/STEM/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/STEM/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/STEM/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/STEM/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/STEM/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/STEM/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estudiante/estudiante_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estudiante/estudiante_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estudiante/estudiante_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estudiante/estudiante_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,41 +44,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="estudiante_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/estudiante/estudiante_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="55" column="61" lean-forward="true" selection-start-line="55" selection-start-column="61" selection-end-line="55" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/STEM/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prediccion.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/STEM/prediccion.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="31" selection-start-column="31" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/STEM/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+            <state relative-caret-position="378">
+              <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,38 +59,80 @@
       <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/STEM/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+            <state relative-caret-position="270">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/STEM/models.py">
+      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/STEM/apps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state relative-caret-position="18">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/STEM/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/STEM/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="33" lean-forward="true" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            <state relative-caret-position="230">
+              <caret line="169" column="23" lean-forward="true" selection-start-line="169" selection-start-column="23" selection-end-line="169" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apk_descarga.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/estudiante/apk_descarga.html">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="90">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registro_pregunta.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/estudiante/registro_pregunta.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registro_pregunta_temp.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/estudiante/registro_pregunta_temp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/STEM/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,24 +184,25 @@
         <option value="$PROJECT_DIR$/STEM/api/views.py" />
         <option value="$PROJECT_DIR$/REST_AI_STEM/settings.py" />
         <option value="$PROJECT_DIR$/REST_AI_STEM/urls.py" />
-        <option value="$PROJECT_DIR$/STEM/admin.py" />
         <option value="$PROJECT_DIR$/STEM/prediccion.csv" />
         <option value="$USER_HOME$/.local/lib/python3.6/site-packages/sklearn/tree/__init__.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/STEM/serializers.py" />
         <option value="$PROJECT_DIR$/templates/estudiante/dsf.html" />
         <option value="$PROJECT_DIR$/templates/estudiante/registro_pregunta.html" />
         <option value="$PROJECT_DIR$/templates/estudiante/index.html" />
         <option value="$PROJECT_DIR$/templates/estudiante/api_descarga.html" />
-        <option value="$PROJECT_DIR$/templates/base/base.html" />
-        <option value="$PROJECT_DIR$/STEM/urls.py" />
         <option value="$PROJECT_DIR$/templates/estudiante/apk_descarga.html" />
         <option value="$PROJECT_DIR$/STEM/tests.py" />
-        <option value="$PROJECT_DIR$/STEM/views.py" />
-        <option value="$PROJECT_DIR$/STEM/models.py" />
-        <option value="$PROJECT_DIR$/STEM/forms.py" />
         <option value="$PROJECT_DIR$/templates/estudiante/estudiante_list.html" />
         <option value="$PROJECT_DIR$/templates/estudiante/estudiante_form.html" />
+        <option value="$PROJECT_DIR$/STEM/models.py" />
+        <option value="$PROJECT_DIR$/STEM/forms.py" />
+        <option value="$PROJECT_DIR$/STEM/serializers.py" />
+        <option value="$PROJECT_DIR$/STEM/admin.py" />
+        <option value="$PROJECT_DIR$/templates/estudiante/registro_pregunta_temp.html" />
+        <option value="$PROJECT_DIR$/templates/base/base.html" />
+        <option value="$PROJECT_DIR$/STEM/urls.py" />
+        <option value="$PROJECT_DIR$/STEM/views.py" />
       </list>
     </option>
   </component>
@@ -198,10 +216,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="265" />
-    <option name="y" value="27" />
-    <option name="width" value="1371" />
-    <option name="height" value="794" />
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="767" />
+    <option name="height" value="875" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -238,6 +256,12 @@
               <item name="REST_AI_STEM" type="b2602c69:ProjectViewProjectNode" />
               <item name="REST_AI_STEM" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="REST_AI_STEM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="REST_AI_STEM" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="REST_AI_STEM" type="b2602c69:ProjectViewProjectNode" />
@@ -473,7 +497,7 @@
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980631" weight="0.33692724" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32910052" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19031607" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.39206457" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -508,7 +532,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../templates/estudiante/estudiante_list.html" />
     <entry file="file://$PROJECT_DIR$/../apps/STEM/models.py" />
     <entry file="file://$PROJECT_DIR$/../apps/STEM/forms.py" />
     <entry file="file://$PROJECT_DIR$/../apps/STEM/admin.py" />
@@ -597,20 +620,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/Logo2.png" />
-    <entry file="file://$PROJECT_DIR$/STEM/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/STEM/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/REST_AI_STEM/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -632,23 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/STEM/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/estudiante/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -660,13 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/estudiante/registro_pregunta.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="49" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -698,17 +683,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/STEM/serializers.py">
+    <entry file="file://$PROJECT_DIR$/templates/estudiante/estudiante_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        <state relative-caret-position="990">
+          <caret line="55" column="61" lean-forward="true" selection-start-line="55" selection-start-column="61" selection-end-line="55" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/STEM/tests.py">
+    <entry file="file://$PROJECT_DIR$/STEM/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        <state relative-caret-position="330">
+          <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/STEM/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="51" column="38" lean-forward="true" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,27 +717,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/STEM/views.py">
+    <entry file="file://$PROJECT_DIR$/STEM/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="33" lean-forward="true" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/STEM/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        <state relative-caret-position="378">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/estudiante/estudiante_list.html">
+    <entry file="file://$PROJECT_DIR$/STEM/apps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="55" column="61" lean-forward="true" selection-start-line="55" selection-start-column="61" selection-end-line="55" selection-end-column="61" />
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/STEM/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/STEM/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/estudiante/registro_pregunta.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/estudiante/registro_pregunta_temp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -750,12 +779,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/STEM/models.py">
+    <entry file="file://$PROJECT_DIR$/STEM/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="216">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/STEM/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="169" column="23" lean-forward="true" selection-start-line="169" selection-start-column="23" selection-end-line="169" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

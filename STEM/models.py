@@ -3,6 +3,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from rest_framework.reverse import reverse as api_reverse
 
 class Estudiante(models.Model):
+    nombre = models.CharField(max_length=50)
     genero = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
     edad = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(1)])
     grado = models.IntegerField(validators=[MaxValueValidator(11),MinValueValidator(6)])
@@ -15,7 +16,6 @@ class Estudiante(models.Model):
     vcPadre = models.IntegerField(validators=[MaxValueValidator(1),MinValueValidator(0)])
     numHermanos = models.IntegerField(validators=[MaxValueValidator(5),MinValueValidator(0)])
 
-
     @classmethod
     def get_by_id(cls, uid):
         return Estudiante.objects.get(pk=uid)
@@ -23,6 +23,8 @@ class Estudiante(models.Model):
     def get_api_url(self, request=None):
         return api_reverse("app-stem:estudiante-rud", kwargs={'pk': self.pk}, request=request)
 
+    def __str__(self):
+        return '{}'.format(self.nombre)
 
 class Predecidos(models.Model):
     PAU1C = models.IntegerField(validators=[MaxValueValidator(3),MinValueValidator(0)])
@@ -79,6 +81,7 @@ class Predecidos(models.Model):
 
     def get_api_url(self, request=None):
         return api_reverse("app-stem:predecidos-rud", kwargs={'pk': self.pk}, request=request)
+
 
 #     genero 0=hombre 1=mujer
 #     edad = 1=5-10años 2=10-15 3=15-20

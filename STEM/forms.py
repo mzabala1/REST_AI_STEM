@@ -7,6 +7,7 @@ class EstudianteForm(forms.ModelForm):
         model = Estudiante
 
         fields = [
+            'nombre',
             'genero',
             'edad',
             'grado',
@@ -21,6 +22,7 @@ class EstudianteForm(forms.ModelForm):
         ]
 
         labels = {
+            'nombre': 'Nombre',
             'genero': 'Genero',
             'edad': 'Edad',
             'grado': 'Grado',

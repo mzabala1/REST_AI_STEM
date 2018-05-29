@@ -10,6 +10,13 @@
         {% csrf_token %}
         <legend>Registro de pregunta</legend>
         <fieldset class="form-group">
+            <label class="col-lg-0"> {{ form.nombre.errors }} </label>
+            <label for="{{ form.nombre.id_for_label }}" class="col-lg-2 control-label">Nombre:</label>
+            <div class="form-group col-lg-3">
+                <p>{{ form.nombre }}</p>
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
             <label class="col-lg-0"> {{ form.genero.errors }} </label>
             <label for="{{ form.genero.id_for_label }}" class="col-lg-2 control-label">Genero:</label>
             <div class="col-lg-3">

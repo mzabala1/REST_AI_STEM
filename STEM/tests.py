@@ -12,7 +12,7 @@ class EstudiantesAPITestCase(APITestCase):
         user = User(username='testcfeuser', email='test@stem.com')
         user.set_password("xpassword")
         user.save()
-        estudiante1 = Estudiante.objects.create(genero="1", edad="2", grado="8", gpCiencia="2", gpTecnologia="2",
+        estudiante1 = Estudiante.objects.create(nombre="Felipe", genero="1", edad="2", grado="8", gpCiencia="2", gpTecnologia="2",
                                                 gpIngenieria="3", gpMatematica="4", estrato="1", vcMadre="0",
                                                 vcPadre="0", numHermanos="3")
     def test_single_user(self):
@@ -32,12 +32,12 @@ class EstudiantesAPITestCase(APITestCase):
 class test_estudiante(TestCase):
 
     def setUp(self):
-        self.test_estudiante1 = Estudiante(genero="0", edad="2", grado="10", gpCiencia="1", gpTecnologia="2",
+        self.test_estudiante1 = Estudiante(nombre="David", genero="0", edad="2", grado="10", gpCiencia="1", gpTecnologia="2",
                                            gpIngenieria="3", gpMatematica="4", estrato="1", vcMadre="1", vcPadre="0",
                                            numHermanos="5")
         self.test_estudiante1.save()
 
-        self.test_estudiante2 = Estudiante(genero="1", edad="1", grado="6", gpCiencia="1", gpTecnologia="2",
+        self.test_estudiante2 = Estudiante(nombre="Lupe", genero="1", edad="1", grado="6", gpCiencia="1", gpTecnologia="2",
                                            gpIngenieria="4", gpMatematica="3", estrato="1", vcMadre="0", vcPadre="0",
                                            numHermanos="0")
         self.test_estudiante2.save()

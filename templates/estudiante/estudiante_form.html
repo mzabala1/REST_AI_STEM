@@ -13,7 +13,7 @@
                 <label class="col-lg-0"> {{ form.nombre.errors }} </label>
                 <label for="{{ form.nombre.id_for_label }}" class="col-lg-2 control-label">Nombre:</label>
                 <div class="form-group col-lg-3">
-                    <p>{{ form.nombre }}</p>
+                    <input type="text" class="form-control" {{ form.nombre }}
                 </div>
             </fieldset>
             <fieldset class="form-group">
@@ -48,6 +48,7 @@
                 <label for="{{ form.grado.id_for_label }}" class="col-lg-2 control-label">Grado:</label>
                 <div class="col-lg-3">
                     <select class="form-control" id="{{ form.grado }}">
+                        <option selected>Escoge...</option>
                         <option value="6">Sexto (6º)</option>
                         <option value="7">Séptimo (7º)</option>
                         <option value="8">Octavo (8º)</option>
@@ -89,7 +90,7 @@
             </fieldset>
             <fieldset class="form-group">
                 <label class="col-lg-0"> {{ form.gpMatematica.errors }} </label>
-                <label for="{{ form.gpMatematica.id_for_label }}" class="col-lg-2 control-label">Gusto por la matematica:</label>
+                <label for="{{ form.gpMatematica.id_for_label }}" class="col-lg-2 control-label">Gusto por la matemática:</label>
                 <div class="radio col-lg-3">
                     <label><input type="radio" name="gpMatematica" value="1">Poco</label>
                     <label><input type="radio" name="gpMatematica" value="2">Medio</label>
@@ -102,6 +103,7 @@
                 <label for="{{ form.estrato.id_for_label }}" class="col-lg-2 control-label">Estrato:</label>
                 <div class="col-lg-3">
                     <select class="form-control" id="{{ form.estrato }}">
+                        <option selected>Escoge...</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -130,9 +132,10 @@
             </fieldset>
             <div class="form-group">
                 <label class="col-lg-0"> {{ form.numHermanos.errors }} </label>
-                <label for="{{ form.numHermanos.id_for_label }}" class="col-lg-2 control-label">Numero de hermanos:</label>
+                <label for="{{ form.numHermanos.id_for_label }}" class="col-lg-2 control-label">Número de hermanos:</label>
                 <div class="col-lg-3">
                     <select class="form-control" id="{{ form.numHermanos }}">
+                        <option selected>Escoge...</option>
                         <option value="0">Ninguno (0)</option>
                         <option value="1">Uno (1)</option>
                         <option value="2">Dos (2)</option>

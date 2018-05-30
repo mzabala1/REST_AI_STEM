@@ -13,35 +13,35 @@
                 <label class="col-lg-0"> {{ form.pregunta.errors }} </label>
                 <label for="{{ form.pregunta.id_for_label }}" class="col-lg-2 control-label">Ingrese su pregunta:</label>
                 <div class="form-group col-lg-3">
-                    {{ form.pregunta }}
+                    <input type="text" class="form-control" {{ form.pregunta }}
                 </div>
             </fieldset>
             <fieldset class="form-group has-success">
                 <label class="col-lg-0"> {{ form.respuestac.errors }} </label>
                 <label for="{{ form.respuestac.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta correcta:</label>
                 <div class="form-group col-lg-3">
-                    {{ form.respuestac }}
+                    <input type="text" class="form-control" {{ form.respuestac }}
                 </div>
             </fieldset>
             <fieldset class="form-group has-error">
                 <label class="col-lg-0"> {{ form.respuestaf1.errors }} </label>
                 <label for="{{ form.respuestaf1.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta #1:</label>
                 <div class="form-group col-lg-3">
-                    {{ form.respuestaf1 }}
+                    <input type="text" class="form-control" {{ form.respuestaf1 }}
                 </div>
             </fieldset>
             <fieldset class="form-group has-error">
                 <label class="col-lg-0"> {{ form.respuestaf2.errors }} </label>
                 <label for="{{ form.respuestaf2.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta #2:</label>
                 <div class="form-group col-lg-3">
-                    {{ form.respuestaf2 }}
+                    <input type="text" class="form-control" {{ form.respuestaf2 }}
                 </div>
             </fieldset>
             <fieldset class="form-group has-error">
                 <label class="col-lg-0"> {{ form.respuestaf3.errors }} </label>
                 <label for="{{ form.respuestaf3.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta #3:</label>
                 <div class="form-group col-lg-3">
-                    {{ form.respuestaf3 }}
+                    <input type="text" class="form-control" {{ form.respuestaf3 }}
                 </div>
             </fieldset>
             <fieldset class="form-group">
@@ -64,13 +64,14 @@
             </fieldset>
             <fieldset class="form-group">
                 <label class="col-lg-0"> {{ form.area.errors }} </label>
-                <label for="{{ form.area.id_for_label }}" class="col-lg-2 control-label">Seleccione area:</label>
+                <label for="{{ form.area.id_for_label }}" class="col-lg-2 control-label">Seleccione área:</label>
                 <div class="radio col-lg-3">
                     <select class="form-control" id="{{ form.area }}">
+                        <option selected>Escoge...</option>
                         <option value="1">Ciencia</option>
                         <option value="2">Tecnología</option>
                         <option value="3">Ingeniería</option>
-                        <option value="4">Matematica</option>
+                        <option value="4">Matemática</option>
                     </select>
                 </div>
             </fieldset>
@@ -79,6 +80,7 @@
                 <label for="{{ form.unidad.id_for_label }}" class="col-lg-2 control-label">Seleccione unidad:</label>
                 <div class="radio col-lg-3">
                     <select class="form-control" id="{{ form.unidad }}">
+                        <option selected>Escoge...</option>
                         <option value="1">Unidad 1</option>
                         <option value="2">Unidad 2</option>
                         <option value="3">Unidad 3</option>

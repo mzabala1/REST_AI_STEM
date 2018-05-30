@@ -11,32 +11,37 @@
 </head>
 <body>
 <div class="container">
-
     {% block navbar %}
         <div class="bs-docs-section clearfix">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="bs-component">
                         <nav class="navbar navbar-default">
-                            <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" aria-expanded="false" class="navbar-toggle">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
                                 <div class="navbar-header">
                                     <img alt="Brand" src="{% static "/LogoAndroid.png" %}" height="60">
                                 </div>
                                 <div class="navbar-header">
                                     <a class="navbar-brand" href="{% url 'app-stem:index' %}">Home</a>
                                 </div>
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="{% url 'app-stem:registro_estudiante' %}">Registrar estudiante</a></li>
-                                        <li><a href="{% url 'app-stem:registro-preguntas' %}">Registrar preguntas</a></li>
-                                        <li><a href="{% url 'app-stem:descargar-apk' %}">APK</a></li>
-                                    </ul>
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="{% url 'app-stem:listar_estudiantes' %}">Listar estudiantes</a></li>
-                                        <li><a href="{% url 'app-stem:listar_preguntas' %}">Listar preguntas</a></li>
-                                        <li><a href="http://www.eafit.edu.co/" onclick="pageTracker._link(this.href); return false;">Universidad EAFIT</a></li>
-                                    </ul>
-                                </div>
+                            </div>
+                            <div id="navbarCollapse" class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="{% url 'app-stem:registro_estudiante' %}">Registrar estudiante</a></li>
+                                    <li><a href="{% url 'app-stem:registro-preguntas' %}">Registrar preguntas</a></li>
+                                    <li><a href="{% url 'app-stem:descargar-apk' %}">APK</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="{% url 'app-stem:listar_estudiantes' %}">Listar estudiantes</a></li>
+                                    <li><a href="{% url 'app-stem:listar_preguntas' %}">Listar preguntas</a></li>
+                                    <li><a href="http://www.eafit.edu.co/" onclick="pageTracker._link(this.href); return false;">Universidad EAFIT</a></li>
+                                </ul>
                             </div>
                         </nav>
                     </div>

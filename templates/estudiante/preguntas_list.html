@@ -9,13 +9,13 @@
 
     <table class="table table-striped table-hover">
         <thead>
-        <tr>
+        <tr class="danger">
             <td>#</td>
             <td>Pregunta</td>
             <td>Respuesta correcta</td>
-            <td>Respuesta incorrecta 1</td>
-            <td>Respuesta incorrecta 2</td>
-            <td>Respuesta incorrecta 3</td>
+            <td>Respuesta Incorrecta #1</td>
+            <td>Respuesta Incorrecta #2</td>
+            <td>Respuesta Incorrecta #3</td>
             <td>Dificultad</td>
             <td>Area</td>
             <td>Unidad</td>
@@ -24,7 +24,7 @@
         <tbody>
         {%  if preguntas %}
             {% for pregunta in preguntas %}
-                <tr>
+                <tr class="warning">
                     <td>{{ pregunta.id }}</td>
                     <td>{{ pregunta.pregunta }}</td>
                     <td>{{ pregunta.respuestac }}</td>

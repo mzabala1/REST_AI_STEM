@@ -34,7 +34,7 @@ class predecidosFullList(generics.ListAPIView):
     def get_queryset(self):
         return Predecidos.objects.all()
 
-class preguntasRudView(generics.RetrieveAPIView):
+class preguntasRudView(generics.RetrieveUpdateAPIView):
     lookup_field = 'pk' #id
     serializer_class = PreguntasSerializer
 

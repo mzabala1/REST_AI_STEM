@@ -1,2 +1,4 @@
-STEM/forms.py:3: [E] PYFLAKES:'django.core.validators.MaxValueValidator' imported but unused
-STEM/forms.py:3: [E] PYFLAKES:'django.core.validators.MinValueValidator' imported but unused
+STEM/views.py:7: [E] PYFLAKES:'from pylab import *' used; unable to detect undefined names
+STEM/views.py:62: [E] PYFLAKES:local variable 'nombre' is assigned to but never used
+STEM/views.py:91: [E] PYFLAKES:'np' may be undefined, or defined from star imports: [E] PYFLAKES:pylab
+STEM/tests.py:15: [E] PYFLAKES:local variable 'estudiante1' is assigned to but never used

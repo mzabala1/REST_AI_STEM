@@ -172,13 +172,19 @@ def pregunta_view(request):
             form.save()
         return redirect('app-stem:index')
 
-    return render(request, 'estudiante/registro_pregunta_temp.html', {'form': form})
+    return render(request, 'estudiante/registro_pregunta.html', {'form': form})
 
 def estudiante_list(request):
     estudiante = Estudiante.objects.all()
     contexto = {'estudiantes': estudiante}
 
     return render(request, 'estudiante/estudiante_list.html', contexto)
+
+def preguntas_list(request):
+    pregunta = Preguntas.objects.all()
+    contexto = {'preguntas': pregunta}
+
+    return render(request, 'estudiante/preguntas_list.html', contexto)
 
 x=[[1,2,9,1,2,3,2,2,1,0,1],[0,2,9,4,3,2,1,4,1,0,5],[1,3,9,2,4,2,1,2,1,0,2],
    [0,2,9,1,1,1,1,2,1,0,0],[0,3,9,3,1,2,4,3,1,1,0],[1,2,9,3,4,3,3,2,0,0,5],[1,2,9,4,3,1,2,2,0,1,1],

@@ -1,12 +1,13 @@
 from django.urls import path
-from .views import index, estudiante_view, preguntasFullList, preguntasRudView, estudiante_list, estudianteFullList, estudianteRudView, predecidosFullList, predecidosRudView, pregunta_view, descargar_apk
+from .views import index, estudiante_view, preguntas_list, preguntasFullList, preguntasRudView, estudiante_list, estudianteFullList, estudianteRudView, predecidosFullList, predecidosRudView, pregunta_view, descargar_apk
 
 app_name = "REST_AI_STEM"
 
 urlpatterns = [
     path('', index, name="index"),
     path('registro/estudiante', estudiante_view, name="registro_estudiante"),
-    path('listar/', estudiante_list, name="listar_estudiantes"),
+    path('listar/estudiante', estudiante_list, name="listar_estudiantes"),
+    path('listar/pregunta', preguntas_list, name="listar_preguntas"),
     path('api/estudiante/', estudianteFullList.as_view(), name='estudiante-list'),
     path('api/estudiante/<pk>/', estudianteRudView.as_view(), name='estudiante-rud'),
     path('api/predecidos/', predecidosFullList.as_view(), name='predecidos-list'),

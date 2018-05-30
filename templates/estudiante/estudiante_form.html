@@ -43,18 +43,20 @@
                     </div>
                 </div>
             </fieldset>
-            <fieldset class="form-group">
+            <div class="form-group">
                 <label class="col-lg-0"> {{ form.grado.errors }} </label>
                 <label for="{{ form.grado.id_for_label }}" class="col-lg-2 control-label">Grado:</label>
-                <div class="radio col-lg-3">
-                    <label><input type="radio" name="grado" value="6">Sexto (6º)</label>
-                    <label><input type="radio" name="grado" value="7">Séptimo (7º)</label>
-                    <label><input type="radio" name="grado" value="8">Octavo (8º)</label>
-                    <label><input type="radio" name="grado" value="9">Noveno (9º)</label>
-                    <label><input type="radio" name="grado" value="10">Décimo (10º)</label>
-                    <label><input type="radio" name="grado" value="11">Undécimo (11º)</label>
+                <div class="col-lg-3">
+                    <select class="form-control" id="{{ form.grado }}">
+                        <option value="6">Sexto (6º)</option>
+                        <option value="7">Séptimo (7º)</option>
+                        <option value="8">Octavo (8º)</option>
+                        <option value="9">Noveno (9º)</option>
+                        <option value="10">Décimo (10º)</option>
+                        <option value="11">Undécimo (11º)</option>
+                    </select>
                 </div>
-            </fieldset>
+            </div>
             <fieldset class="form-group">
                 <label class="col-lg-0"> {{ form.gpCiencia.errors }} </label>
                 <label for="{{ form.gpCiencia.id_for_label }}" class="col-lg-2 control-label">Gusto por la ciencia:</label>
@@ -95,19 +97,21 @@
                     <label><input type="radio" name="gpMatematica" value="4">Muy alto</label>
                 </div>
             </fieldset>
-            <fieldset class="form-group">
+            <div class="form-group">
                 <label class="col-lg-0"> {{ form.estrato.errors }} </label>
                 <label for="{{ form.estrato.id_for_label }}" class="col-lg-2 control-label">Estrato:</label>
-                <div class="radio col-lg-3">
-                    <label><input type="radio" name="estrato" value="0">0</label>
-                    <label><input type="radio" name="estrato" value="1">1</label>
-                    <label><input type="radio" name="estrato" value="2">2</label>
-                    <label><input type="radio" name="estrato" value="3">3</label>
-                    <label><input type="radio" name="estrato" value="4">4</label>
-                    <label><input type="radio" name="estrato" value="5">5</label>
-                    <label><input type="radio" name="estrato" value="6">6</label>
+                <div class="col-lg-3">
+                    <select class="form-control" id="{{ form.estrato }}">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
                 </div>
-            </fieldset>
+            </div>
             <fieldset class="form-group">
                 <label class="col-lg-0"> {{ form.vcMadre.errors }} </label>
                 <label for="{{ form.vcMadre.id_for_label }}" class="col-lg-2 control-label">Vive con la madre:</label>
@@ -124,18 +128,20 @@
                     <label><input type="radio" name="vcPadre" value="0">No</label>
                 </div>
             </fieldset>
-            <fieldset class="form-group">
+            <div class="form-group">
                 <label class="col-lg-0"> {{ form.numHermanos.errors }} </label>
-                <label for="{{ form.numHermanos.id_for_label }}" class="col-lg-2 control-label">Número de herman@s:</label>
-                <div class="radio col-lg-3">
-                    <label><input type="radio" name="numHermanos" value="0">Ninguno (0)</label>
-                    <label><input type="radio" name="numHermanos" value="1">Uno (1)</label>
-                    <label><input type="radio" name="numHermanos" value="2">Dos (2)</label>
-                    <label><input type="radio" name="numHermanos" value="3">Tres (3)</label>
-                    <label><input type="radio" name="numHermanos" value="4">Cuatro (4)</label>
-                    <label><input type="radio" name="numHermanos" value="5">Cinco o más (5+)</label>
+                <label for="{{ form.numHermanos.id_for_label }}" class="col-lg-2 control-label">Numero de hermanos:</label>
+                <div class="col-lg-3">
+                    <select class="form-control" id="{{ form.numHermanos }}">
+                        <option value="0">Ninguno (0)</option>
+                        <option value="1">Uno (1)</option>
+                        <option value="2">Dos (2)</option>
+                        <option value="3">Tres (3)</option>
+                        <option value="4">Cuatro (4)</option>
+                        <option value="5">Cinco o más (5+)</option>
+                    </select>
                 </div>
-            </fieldset>
+            </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                     <button type="submit" class="btn btn-primary">Registrar</button>

@@ -170,7 +170,7 @@ def pregunta_view(request):
     if form.is_valid():
         if request.method == 'POST':
             form.save()
-        return redirect('app-stem:index')
+        return redirect('app-stem:listar_preguntas')
 
     return render(request, 'estudiante/registro_pregunta.html', {'form': form})
 

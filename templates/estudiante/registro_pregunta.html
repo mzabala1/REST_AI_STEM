@@ -6,42 +6,42 @@
 
 {% block content %}
     <form class="form-horizontal" method="post">
-    {% csrf_token %}
+        {% csrf_token %}
         <fieldset>
             <legend>Registro de pregunta</legend>
             <fieldset class="form-group">
                 <label class="col-lg-0"> {{ form.pregunta.errors }} </label>
                 <label for="{{ form.pregunta.id_for_label }}" class="col-lg-2 control-label">Ingrese su pregunta:</label>
                 <div class="form-group col-lg-3">
-                    <p>{{ form.pregunta }}</p>
+                    {{ form.pregunta }}
                 </div>
             </fieldset>
-            <fieldset class="form-group">
+            <fieldset class="form-group has-success">
                 <label class="col-lg-0"> {{ form.respuestac.errors }} </label>
                 <label for="{{ form.respuestac.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta correcta:</label>
                 <div class="form-group col-lg-3">
-                    <p>{{ form.respuestac }}</p>
+                    {{ form.respuestac }}
                 </div>
             </fieldset>
-            <fieldset class="form-group">
+            <fieldset class="form-group has-error">
                 <label class="col-lg-0"> {{ form.respuestaf1.errors }} </label>
-                <label for="{{ form.respuestaf1.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta número 1:</label>
+                <label for="{{ form.respuestaf1.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta #1:</label>
                 <div class="form-group col-lg-3">
-                    <p>{{ form.respuestaf1 }}</p>
+                    {{ form.respuestaf1 }}
                 </div>
             </fieldset>
-            <fieldset class="form-group">
+            <fieldset class="form-group has-error">
                 <label class="col-lg-0"> {{ form.respuestaf2.errors }} </label>
-                <label for="{{ form.respuestaf2.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta número 2:</label>
+                <label for="{{ form.respuestaf2.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta #2:</label>
                 <div class="form-group col-lg-3">
-                    <p>{{ form.respuestaf2 }}</p>
+                    {{ form.respuestaf2 }}
                 </div>
             </fieldset>
-            <fieldset class="form-group">
+            <fieldset class="form-group has-error">
                 <label class="col-lg-0"> {{ form.respuestaf3.errors }} </label>
-                <label for="{{ form.respuestaf3.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta número 3:</label>
+                <label for="{{ form.respuestaf3.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta #3:</label>
                 <div class="form-group col-lg-3">
-                    <p>{{ form.respuestaf3 }}</p>
+                    {{ form.respuestaf3 }}
                 </div>
             </fieldset>
             <fieldset class="form-group">
@@ -66,20 +66,24 @@
                 <label class="col-lg-0"> {{ form.area.errors }} </label>
                 <label for="{{ form.area.id_for_label }}" class="col-lg-2 control-label">Seleccione area:</label>
                 <div class="radio col-lg-3">
-                    <label><input type="radio" name="area" value="1">Ciencia</label>
-                    <label><input type="radio" name="area" value="2">Tecnología</label>
-                    <label><input type="radio" name="area" value="3">Ingeniería</label>
-                    <label><input type="radio" name="area" value="4">Matemática</label>
+                    <select class="form-control" id="{{ form.area }}">
+                        <option value="1">Ciencia</option>
+                        <option value="2">Tecnología</option>
+                        <option value="3">Ingeniería</option>
+                        <option value="4">Matematica</option>
+                    </select>
                 </div>
             </fieldset>
             <fieldset class="form-group">
                 <label class="col-lg-0"> {{ form.unidad.errors }} </label>
                 <label for="{{ form.unidad.id_for_label }}" class="col-lg-2 control-label">Seleccione unidad:</label>
                 <div class="radio col-lg-3">
-                    <label><input type="radio" name="unidad" value="1">Ciencia</label>
-                    <label><input type="radio" name="unidad" value="2">Tecnología</label>
-                    <label><input type="radio" name="unidad" value="3">Ingeniería</label>
-                    <label><input type="radio" name="unidad" value="4">Matemática</label>
+                    <select class="form-control" id="{{ form.unidad }}">
+                        <option value="1">Unidad 1</option>
+                        <option value="2">Unidad 2</option>
+                        <option value="3">Unidad 3</option>
+                        <option value="4">Unidad 4</option>
+                    </select>
                 </div>
             </fieldset>
             <div class="form-group">

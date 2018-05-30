@@ -1,85 +1,94 @@
 {% extends 'base/base.html' %}
 
 {% block tittle %}
-    Preguntas
+    Registro pregunta
 {% endblock %}
 
 {% block content %}
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post">
+        {% csrf_token %}
         <fieldset>
             <legend>Registro de pregunta</legend>
-            <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label">Ingrese su pregunta:</label>
-                <div class="col-lg-10">
-                    <textarea class="form-control" rows="2" id="textArea"></textarea>
+            <fieldset class="form-group">
+                <label class="col-lg-0"> {{ form.pregunta.errors }} </label>
+                <label for="{{ form.pregunta.id_for_label }}" class="col-lg-2 control-label">Ingrese su pregunta:</label>
+                <div class="form-group col-lg-3">
+                    {{ form.pregunta }}
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-2 control-label">Seleccione nivel de pregunta:</label>
-                <div class="col-lg-10">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                            Nivel 1
-                        </label>
+            </fieldset>
+            <fieldset class="form-group has-success">
+                <label class="col-lg-0"> {{ form.respuestac.errors }} </label>
+                <label for="{{ form.respuestac.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta correcta:</label>
+                <div class="form-group col-lg-3">
+                    {{ form.respuestac }}
+                </div>
+            </fieldset>
+            <fieldset class="form-group has-error">
+                <label class="col-lg-0"> {{ form.respuestaf1.errors }} </label>
+                <label for="{{ form.respuestaf1.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta #1:</label>
+                <div class="form-group col-lg-3">
+                    {{ form.respuestaf1 }}
+                </div>
+            </fieldset>
+            <fieldset class="form-group has-error">
+                <label class="col-lg-0"> {{ form.respuestaf2.errors }} </label>
+                <label for="{{ form.respuestaf2.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta #2:</label>
+                <div class="form-group col-lg-3">
+                    {{ form.respuestaf2 }}
+                </div>
+            </fieldset>
+            <fieldset class="form-group has-error">
+                <label class="col-lg-0"> {{ form.respuestaf3.errors }} </label>
+                <label for="{{ form.respuestaf3.id_for_label }}" class="col-lg-2 control-label">Ingrese la respuesta incorrecta #3:</label>
+                <div class="form-group col-lg-3">
+                    {{ form.respuestaf3 }}
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="col-lg-0"> {{ form.nivel.errors }} </label>
+                <label for="{{ form.nivel.id_for_label }}" class="col-lg-2 control-label">Seleccione dificultad de pregunta:</label>
+                <div class="col-lg-3">
+                    <div class="radio col-lg-0">
+                        <label><input type="radio" name="nivel" value="1">Muy fácil</label>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                            Nivel 2
-                        </label>
+                    <div class="radio col-lg-0">
+                        <label><input type="radio" name="nivel" value="2">Fácil</label>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option3">
-                            Nivel 3
-                        </label>
+                    <div class="radio col-lg-0">
+                        <label><input type="radio" name="nivel" value="3">Media</label>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option4">
-                            Nivel 4
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option5">
-                            Nivel 5
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option6">
-                            Nivel 6
-                        </label>
+                    <div class="radio col-lg-0">
+                        <label><input type="radio" name="nivel" value="4">Difícil</label>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="select" class="col-lg-2 control-label">Seleccione area</label>
-                <div class="col-lg-10">
-                    <select class="form-control" id="select">
-                        <option>Ciencia</option>
-                        <option>Tecnología</option>
-                        <option>Ingeniería</option>
-                        <option>Matematica</option>
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="col-lg-0"> {{ form.area.errors }} </label>
+                <label for="{{ form.area.id_for_label }}" class="col-lg-2 control-label">Seleccione area:</label>
+                <div class="radio col-lg-3">
+                    <select class="form-control" id="{{ form.area }}">
+                        <option value="1">Ciencia</option>
+                        <option value="2">Tecnología</option>
+                        <option value="3">Ingeniería</option>
+                        <option value="4">Matematica</option>
                     </select>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="select" class="col-lg-2 control-label">Seleccione unidad</label>
-                <div class="col-lg-10">
-                    <select class="form-control" id="select">
-                        <option>Unidad 1</option>
-                        <option>Unidad 2</option>
-                        <option>Unidad 3</option>
-                        <option>Unidad 4</option>
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="col-lg-0"> {{ form.unidad.errors }} </label>
+                <label for="{{ form.unidad.id_for_label }}" class="col-lg-2 control-label">Seleccione unidad:</label>
+                <div class="radio col-lg-3">
+                    <select class="form-control" id="{{ form.unidad }}">
+                        <option value="1">Unidad 1</option>
+                        <option value="2">Unidad 2</option>
+                        <option value="3">Unidad 3</option>
+                        <option value="4">Unidad 4</option>
                     </select>
                 </div>
-            </div>
+            </fieldset>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                    <button type="reset" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
                     <button type="reset" class="btn btn-default">Cancelar</button>
                 </div>
             </div>

@@ -50,17 +50,6 @@ class PreguntasForm(forms.ModelForm):
             'unidad',
         ]
 
-        labels = {
-            'pregunta': 'Ingrese pregunta',
-            'respuestac': 'Ingrese respuesta correcta',
-            'respuestaf1': 'Ingrese respuesta fallida 1',
-            'respuestaf2': 'Ingrese respuesta fallida 2',
-            'respuestaf3': 'Ingrese respuesta fallida 3',
-            'nivel': 'Seleccione nivel de la pregunta',
-            'area': 'Seleccione area',
-            'unidad': 'Seleccione unidad',
-        }
-
 # widgets = {
 #     'genero': forms.CheckboxSelectMultiple(),
 #     'edad': forms.NumberInput(attrs={'class': 'form-control'}),

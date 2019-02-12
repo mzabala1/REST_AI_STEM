@@ -1,4 +1,4 @@
-Django==2.0.4
+Django==2.0.11
 numpy
 sklearn
 scipy
@@ -15,7 +15,7 @@ matplotlib
 # $pip freeze
 # astroid==1.6.4
 # coverage==4.5.1
-# Django==2.0.4
+# Django==2.0.11
 # django-jenkins==0.110.0
 # djangorestframework==3.8.2
 # isort==4.3.4

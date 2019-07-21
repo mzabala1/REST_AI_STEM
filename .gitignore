@@ -1,5 +1,6 @@
 #Don't trach content of these folders
-.idea/
-
+.idea/*.*
+.idea/*
+.idea/workspace.xml
 #Compiled source
 *.pyc

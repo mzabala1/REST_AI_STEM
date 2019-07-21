@@ -1,0 +1,5 @@
+#Don't trach content of these folders
+.idea/
+
+#Compiled source
+*.pyc
